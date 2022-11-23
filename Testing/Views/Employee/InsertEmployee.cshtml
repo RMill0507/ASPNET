@@ -1,0 +1,36 @@
+﻿@model Employee
+
+<h2>Create a New Employee</h2>
+
+@using (Html.BeginForm("InsertEmployeeToDatabase", "Employee", "Post"))
+{
+    <input asp-for="EmployeeID" type="hidden" value="" />
+
+    <label asp-for="EmployeeID" class="control-label">EmployeeeID</label>
+    <input type="number" EmployeeID="EmployeeID" class="form-control" value="" />
+
+    <label asp-for="FirstName" class="control-label">FirstName</label>
+    <input type="text" step="0.01" name="FirstName" class="form-control" />
+
+    <label asp-for="LastName" class="control-label">LastName</label>
+    <input type="text" step="0.01" name="LastName" class="form-control" />
+    
+    <label asp-for="PhoneNumber" class="control-label">PhoneNumber</label>
+    <input type="text" step="0.01" name="PhoneNumber" class="form-control" />
+
+    <label asp-for="Title" class="control-label">Title</label>
+    <input type="text" step="0.01" name="Title" class="form-control" />
+ 
+
+    <div class="form-group">
+        <label for="">Select a Category</label>
+        <select class="form-control" name="CategoryID" value="">
+            @foreach (var cat in Model.Categories)
+            {
+                <option value="@cat.CategoryID">@cat.CategoryID @cat.Name</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Create Employee" class="btn btn-primary" />
+}
