@@ -29,6 +29,8 @@
     @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
     {
         <input type="hidden" asp-for="ProductID" value="@Model.ProductID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />//this is being displayed to the user
+        //and this is a razor page that combines C# and HTML together. This is mapping to the productcontroller
     }
 </div>
+        

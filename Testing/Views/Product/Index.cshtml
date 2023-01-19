@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model IEnumerable<Product>//With Razor View files (.cshtml) we can use C# code with html code. We can do this by using the @ symbol.
 
 <h2>Products</h2>
 
@@ -6,7 +6,7 @@
     <a href="/Product/InsertProduct/">Create a New Product</a>
 </div>
 
-<table class="table">
+<table class="table"> 
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -16,10 +16,12 @@
         <th>Stock Level</th>
     </tr>
 
-    @foreach (var product in @Model)
+    @foreach (var product in @Model)//ASP.Net command, designating what model is going to hold the data. We are displaying
+    //all the products in an HTML table.COMBINING HTML AND C#
+    //href is making a link to each product id
     {
         <tr>
-            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td> <!-- This is our link to view each product-->
             <td>@product.Name</td>
             <td>@product.Price</td>
             <td>@product.CategoryID</td>

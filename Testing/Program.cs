@@ -15,11 +15,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
     IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("bestbuy"));
-    conn.Open();
+    conn.Open();//creating connection string thats pulling info from best buy. to generate IDBconnection
+    //
     return conn;
 });
 
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();//holding info where repos are created
 
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 

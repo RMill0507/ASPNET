@@ -3,7 +3,7 @@ using Testing.Models;
 
 namespace Testing
 {
-    public interface IProductRepository
+    public interface IProductRepository//this is holding our methods we can use
     {
         public IEnumerable<Product> GetAllProducts();
         public Product GetProduct(int id);

@@ -3,24 +3,25 @@ using Testing.Models;
 
 namespace Testing.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : Controller//conforming to product controller
     {
-        private readonly IProductRepository repo;
+        private readonly IProductRepository repo;//creating an obj
 
-        public ProductController(IProductRepository repo)
+        public ProductController(IProductRepository repo)//our constructor passing in a repo of IPRODUCTREPOSITORY
         {
-            this.repo = repo;
+            this.repo = repo;//connecting
         }
 
 
         public IActionResult Index()
         {
-            var products = repo.GetAllProducts();
-            return View(products);
+            var products = repo.GetAllProducts();//calling our repo to get GetAllPRoducts methods
+            return View(products);//passing in ienumerable collection of products
         }
         public IActionResult ViewProduct(int id)
         {
-            var product = repo.GetProduct(id);
+            var product = repo.GetProduct(id);//returning a single product
+            //the view is going to take the data
             return View(product);
         }
 
@@ -33,7 +34,7 @@ namespace Testing.Controllers
             }
             return View(prod);
         }
-        public IActionResult UpdateProductToDatabase(Product product)
+        public IActionResult UpdateProductoDatabase(Product product)
         {
             repo.UpdateProduct(product);
 

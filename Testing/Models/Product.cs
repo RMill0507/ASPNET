@@ -3,9 +3,9 @@ using System.ComponentModel;
 
 namespace Testing.Models
 {
-    public class Product
+    public class Product//This is where we are storing the DATA from our DATEBASE
     {
-        public Product()
+        public Product()//Each object will be apart of type Product
         {
 
         }

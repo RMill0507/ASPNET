@@ -4,7 +4,7 @@ using System.Diagnostics.Contracts;
 
 namespace Testing.Models
 {
-    public class Employee
+    public class Employee //STORING THE DATA OF EMPLOYEES FROM OUR DATABASE
     {
         public Employee()
         {

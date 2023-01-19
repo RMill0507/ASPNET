@@ -5,23 +5,27 @@ using Testing.Models;
 
 namespace Testing
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository// this is our class that is conforming to IPRODUCTREPOSITORY
+        //we are implementing the methods and giving them functionality
     {
-        private readonly IDbConnection _conn;
+        private readonly IDbConnection _conn;//allowing us to connect MYSQL. 
 
        
-       public ProductRepository(IDbConnection conn)
+       public ProductRepository(IDbConnection conn)//this is our constructor that takes input for our IDB Connector
         {
             _conn = conn;
         }
-
+ 
         public IEnumerable<Product> GetAllProducts()
         {
-            return _conn.Query<Product>("SELECT * FROM PRODUCTS;"); 
+            return _conn.Query<Product>("SELECT * FROM PRODUCTS;"); //This is our SQLcode for our method that connects to MYSQL
+            //.Query is using dapper to connect to our Product model/class. Also is returing as a collection of products
+            //returning a table from all the products and storing it
         }
-            public Product GetProduct(int id)
+            public Product GetProduct(int id)//getting a single product from MYSQL based on the product id
             {
-                return _conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id", new { id = id });
+                return _conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id;", new { id = id });
+            //querysingle is returning one model item
             }
         public void UpdateProduct(Product product)
         {
