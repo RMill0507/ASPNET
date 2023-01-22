@@ -24,6 +24,8 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();//holding
 
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 
+builder.Services.AddTransient<IReviewRepository, ReviewsRepository>();
+
 var app = builder.Build();
 
 
